@@ -45,6 +45,7 @@ const createDescription =() => {
         pokeName: document.createElement('h3'),
         pokeId: document.createElement('h2'),
         image: document.createElement('img'),
+        pokeWeight: document.createElement('h2')
     }
     return PokeElements;
 }
@@ -53,13 +54,14 @@ const populateElements= (pokemon, pokeElements) => {
     pokeElements.pokeName.textContent= pokemon.name;
     pokeElements.pokeId.textContent= pokemon.id;
     pokeElements.image.src= pokemon.sprites.front_default;
+    pokeElements.pokeWeight.textContent= pokemon.weight;
 
     return pokeElements;
 }
 
 // Mostrar las tarjetas con los elementos
 const renderElements= (pokemon, pokeElements) => {
-    pokemon.append(pokeElements.pokeName, pokeElements.pokeId, pokeElements.image);
+    pokemon.append(pokeElements.pokeName, pokeElements.pokeId, pokeElements.image, pokeElements.pokeWeight);
 }
 
 const joinProcess=(pokemon) => {
